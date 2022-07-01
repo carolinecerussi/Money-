@@ -1,7 +1,20 @@
 //  inputted codes that are paired in url and entered amount will return conversion//
 //if error- entered an amount less than or equal to zero- alert please enter valid amount//
-
-const url =
+export default class Exchange {
+  static getCurrency(otherPlace) {
+    return fetch= `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}pair/USD/${otherPlace}/${amount}`
+    .then(function(response) {
+      if (!response.ok) {
+        throw Error (response.statusText); //possibly different location to throw?//
+      }
+      console.log("ready!");
+       return response.json();
+    })
+    .catch(function(error) {
+      return error;
+    })
+   }
+  }
 
 
 //money code USA 
