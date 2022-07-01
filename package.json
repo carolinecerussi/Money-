@@ -1,17 +1,17 @@
 {
-  "name": "template",
+  "name": "money",
   "version": "1.0.0",
-  "description": "template",
+  "description": "money",
   "main": "webpack.config.js",
-  "scripts": {
+  "script": {
     "build": "webpack --mode=development",
     "start": "npm run build; webpack-dev-server --open --mode=development",
     "lint": "eslint src/*.js",
     "test": "jest --coverage"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Caroline Cerussi",
+  "license": "(ISC)",
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/plugin-transform-modules-commonjs": "^7.6.0",
@@ -29,7 +29,18 @@
   },
   "dependencies": {
     "bootstrap": "^4.5.0",
+    "dotenv": "^16.0.1",
     "jquery": "^3.5.1",
+    "node.js": "^0.0.1-security",
     "popper.js": "^1.16.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carolinecerussi/Money-"
+  },
+  "bugs": {
+    "url": "https://github.com/carolinecerussi/Money-/issues",
+    "email": "caroceru@gmail.com"
+  },
+  "homepage": "https://github.com/carolinecerussi/Money-#readme"
 }

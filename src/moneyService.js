@@ -1,18 +1,29 @@
 export default class Exchange {
-  static getPlace(target_code) {
-    return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}pair/USD/${target_code}/${amount}`)
-    .then(function(response) {
-      if (!response.ok) {
-        throw Error (response.showError); //possibly different location to throw?//
+  static async getTargetCode() {
+    try {
+    const response =await fetch(`https://v6.exchangerate-api.com/v6/YOUR-API-KEYpair/EUR/GBP/AMOUNT}`)
+      if (! response.ok) {
+        throw Error (response.statusText); 
       }
-      console.log("ready!");
        return response.json();
-    })
-    .catch(function(error) {
-      return error;
-    })
-   }
+    } catch (error) {
+      return error.message;
+    }
   }
+}
+
+// let response = fetch(url);
+// fetch(url)
+// .then(response => {
+//   //response handle//
+//   })
+//   .catch(error => {
+//     //handle the error..
+//   });
+
+//   fetch('readme.txt')
+//   .then(response => response.json())
+
 
 
 //money code USA 

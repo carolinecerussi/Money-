@@ -1,33 +1,34 @@
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './css/styles.css';
+import './css';
 import Exchange from './moneyService'
 
 function clearFields() {
   $('#amount').val(" "); //going to be amount in usd input//
   $('#otherPlace').val(" "); //going to be conversion place code//
   $(".showError").text(" "); //if 200 !ok//
-  $('.showAmount').text(" "); ////going to be show conversion
+  $('.showExchange').text(" "); ////going to be show conversion
 }
 
-function getElements(response) {
-  if (response.main) {
-    $('.showAmount').text(`The conversion is ${response.amount} ${response.target_code} .`);
+function getElements(result) {
+  if (result) {
+    $('.showExchange').text(`The conversion in  ${target_code} .`);
   } else {
-    $('.showError').text(`error:${response.error-type}`);
+    $('.showError').text(`error:${error-type}`);
   }
 }
 
 
 $(document).ready(function() {
-$('#getExchange').click(function() {
-  let amount= $('#amount').val();
-  clearFields();
-  Exchange.getPlace(target_code)
-    .then(function(response) {
-      getElements(response);
+  $('#getExchange').submit(function(event) {
+    event.preventDefault();
+    let amount = Number($(amount).val());
+    let target_code = $(target_code).val();
+    clearFields();
+    Exchange.getExchange(amount, target_code);
+      then(function(result) {
+      getElements(result);
     });
   });
 });
-
