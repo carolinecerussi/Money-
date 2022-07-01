@@ -18,7 +18,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'money',
       template: './src/index.html',
-      inject: 'head'
+      inject: 'body'
     }),
     new Dotenv()
   ],
