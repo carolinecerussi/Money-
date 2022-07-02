@@ -1,21 +1,22 @@
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './css';
-import Exchange from './moneyService'
+import './css/IMG';
+import './css/styles.css';
+import Exchange from './moneyService.js';
 
 function clearFields() {
   $('#amount').val(" "); //going to be amount in usd input//
   $('#otherPlace').val(" "); //going to be conversion place code//
-  $(".showError").text(" "); //if 200 !ok//
-  $('.showExchange').text(" "); ////going to be show conversion
-}
 
-function getElements(result) {
-  if (result) {
-    $('.showExchange').text(`The conversion in  ${target_code} .`);
+
+function getElements(response,target_code, conversion_result) {
+  const exchange = JSON.parse(response);
+  if (response.ok) {
+    console.log(exchange);
+    $('.showExchange').text(`The conversion in  ${target_code} is: ${conversion_result} .`);
   } else {
-    $('.showError').text(`error:${error-type}`);
+    $('.showError').text(`error: please enter valid USD amount`);
   }
 }
 
@@ -23,10 +24,10 @@ function getElements(result) {
 $(document).ready(function() {
   $('#getExchange').submit(function(event) {
     event.preventDefault();
-    let amount = Number($(amount).val());
+    let conversion_result = $(amount).val());
     let target_code = $(target_code).val();
+    let exchange = Exchange.getExchange(target_code,conversion_result);
     clearFields();
-    Exchange.getExchange(amount, target_code);
       then(function(result) {
       getElements(result);
     });
