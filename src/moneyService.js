@@ -10,13 +10,13 @@ export default class Exchange {
           resolve(request.response);
         } else {
           reject(request.response);
+          }
         }
-      };
-    request.open("GET",url, true);
-    request.send();
-    });
+        request.open("GET",url, true);
+        request.send();
+      })
   }
-}
+};
 
 //money code USA 
 

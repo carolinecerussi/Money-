@@ -1,7 +1,6 @@
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './css/IMG';
 import './css/styles.css';
 import Exchange from './moneyService.js';
 
