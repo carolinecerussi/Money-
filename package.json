@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.5.0",
+    "build": "^0.1.4",
     "dotenv": "^16.0.1",
     "jquery": "^3.5.1",
     "node.js": "^0.0.1-security",

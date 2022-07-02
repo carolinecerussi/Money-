@@ -7,20 +7,21 @@
     <h1>Convert your USD to another currency</h1>
 
     <form method="get" action="#"><
-    <label for="amount">USD amount:</label>
-    <input id="amount" data-type="currency" type="text" placeholder="$1">
-    <select name=" " id="otherPlace">
+      <label for="amount">USD amount:
+        <input id="amount" data-type="currency" type="text" placeholder="$1">
+      </label>
+      <select name=" " id="otherPlace">
       <option value="Select">Select Currency</option>
       <option value="MXN">MXN: Peso</option>
       <option value="EUR">EUR : Euro</option>
       <option value="JPY">JPY : Yen</option>
       <option value="HKD">HKD: Dollar</option>
       <option value="CAD">CAD Dollar</option>
-      </select>
-    <button type="submit" class="btn" id="getExchange">exchange</button>
-    </form>
-  <div class="showExchange"></div>
-  <div class="showError"></div> 
+    </select>
+  <button type="submit" class="btn" id="getExchange">exchange</button>
+  </form>
+    <div class="showExchange"></div>
+    <div class="showError"></div> 
   </div>
 </body>
 </html>
