@@ -31,8 +31,8 @@ $(document).ready(function() {
   let targetCode = $('#targetCodes option:selected').val();
   makeAPICall(targetCode, USD);
   $('.showExchangeOutput').show();
-  });
-});
+  })
+})
 
 
 
