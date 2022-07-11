@@ -8,7 +8,7 @@
 
     <form method="get" action="#"><
       <label for="amount">USD amount:
-        <input id="amount" data-type="currency" type="text" placeholder="$1">
+        <input id="inputAmount" data-type="currency" type="text" placeholder="$USD">
       </label>
       <select name=" " id="otherPlace">
       <option value="Select">Select Currency</option>
@@ -20,8 +20,17 @@
     </select>
   <button type="submit" class="btn" id="getExchange">exchange</button>
   </form>
-    <div class="showExchange"></div>
-    <div class="showError"></div> 
+  <form>
+    <p id="baseCode"></p>
+    <p id="inputAmountText"></p>
+    <p id="target1input"></p>
+    <p id="outputAmount"></p>
+    <p id="showError"></p>
+  </form>
+
+
   </div>
 </body>
 </html>
+
+<a href="https://www.exchangerate-api.com">Rates By Exchange Rate API</a>
