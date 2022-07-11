@@ -1,22 +1,48 @@
-export default class Exchange { 
-  static getExchange(exchangeTo, currencyAmount) {
-    return new Promise(function(resolve,reject) {
+// export default class Exchange { 
+//   static getExchange() {
+//     return new Promise(function(resolve,reject) {
+//       let request = new XMLHttpRequest(url)
+//        const url = 'https://v6.exchangerate-api.com/v6/YOUR-API-KEY/pair/EUR/GBP'
+//             request.onload = function() {
+//         if (this.status === 200) {
+//           resolve(request.response);
+//         } if  (this.status === 404) {
+//           resolve(request.response);
+//         } else {
+//           reject(request.response);
+//           }
+//         }
+//         request.open("GET",url, true);
+//         request.send();
+//       })
+//   }
+// };
+
+// The Mexican peso (symbol: $; code: MXN) is 
+
+
+export default class Exchange {
+  static getExchange(target, amount) {
+  if (target= MXN) {
+
+  }
+  amount = 
+    return new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
-      const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/USD/${exchangeTo}/${currencyAmount}`;
+      const url = `https://v6.exchangerate-api.com/v6/${apiKey}/pair/${USD}/${target1}/${amount}`;
       request.onload = function() {
         if (this.status === 200) {
           resolve(request.response);
-        } if  (this.status === 404) {
-          resolve(request.response);
         } else {
           reject(request.response);
-          }
         }
-        request.open("GET",url, true);
-        request.send();
-      })
+      };
+      request.open('GET', url, true);
+      request.send();
+    });
   }
-};
+}
+
 
 //money code USA 
 

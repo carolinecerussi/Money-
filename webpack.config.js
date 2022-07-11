@@ -8,9 +8,9 @@ module.exports = {
   output: {
   filename: 'bundle.js',
   path: path.resolve(__dirname, 'dist'),
-  accessKeyId: process.env.APP_ID,
-  API_KEY: process.env.API_KEY,
-  BASE_URL: 'https://v6.exchangerate-api.com/v6/YOUR-API-KEY/pair/EUR/GBP/AMOUNT',
+  BASE_URL: 'https://v6.exchangerate-api.com/v6/YOUR-API-KEY/pair/EUR/GBP',
+  API_KEY: process.env.API-KEY,
+
 
   },
   devtool: 'eval-source-map',
