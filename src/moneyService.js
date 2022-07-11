@@ -1,17 +1,29 @@
 export default class Exchange {
-  static  getExchange(baseCode, target1, amount) {
-  let url = `https://v6.exchangerate-api.com/v6/${process.env.YOUR_API_KEY}/pair/USD/${baseCode}/${target1}/${amount}`;
-    return fetch(url)
-    .then (function (response) {
-        if (! response.ok) {
-          throw Error(response.statusText);
-        } 
-       return response.json();
-      })
-       .catch (function (error) {
-       return error;
-      });
-  }
+  static async getExchange(baseCode,targetCode, amount) {
+    try {
+      const response = await fetch (`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/${baseCode}/${targetCode}/${amount}`);
+      if (!response.ok) {
+        throw Error(response.statusText);
+        }
+        const jsonResponse = await response.json(); 
+       return jsonResponse;
+      } catch(error) {
+       return error.message;
+      }
+    }
+
+    static async getRates(baseCode) {
+      try {
+        const response = await fetch (`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/${baseCode}`);
+        if (!response.ok) {
+          throw Error(response.status);
+        }
+        const jsonResponse = await response.json();
+        return jsonResponse;
+      } catch(error) {
+        return error.message;
+      }
+    }
 }
 
 
@@ -44,9 +56,9 @@ export default class Exchange {
 // return fetch ('https://')
 // }
 
-MXN = response.rates.MXN;
-CAD = response.rates.CAD;
-HKD = response.rates.HKD;
+// MXN = response.rates.MXN;
+// CAD = response.rates.CAD;
+// HKD = response.rates.HKD;
 
 
 

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en-US">
 <head>
   <title>Money X-Change</title>
@@ -6,31 +7,28 @@
   <div class="main">
     <h1>Convert your USD to another currency</h1>
 
-    <form method="get" action="#"><
-      <label for="amount">USD amount:
-        <input id="inputAmount" data-type="currency" type="text" placeholder="$USD">
+    <form id=getChange method="get"><
+      <label for="inputAmount">USD amount:
+      <input id="inputAmount" data-type="currency" type="text" placeholder="$USD">
       </label>
-      <select name=" " id="otherPlace">
+      <select id='targetCodes'>
       <option value="Select">Select Currency</option>
       <option value="MXN">MXN: Peso</option>
       <option value="EUR">EUR : Euro</option>
       <option value="JPY">JPY : Yen</option>
       <option value="HKD">HKD: Dollar</option>
       <option value="CAD">CAD Dollar</option>
-    </select>
-  <button type="submit" class="btn" id="getExchange">exchange</button>
-  </form>
+      </select>
+      <button id="getAmount"type="button">exchange</button>
+    </form>
   <form>
-    <p id="baseCode"></p>
-    <p id="inputAmountText"></p>
-    <p id="target1input"></p>
-    <p id="outputAmount"></p>
-    <p id="showError"></p>
+    <div id="showExchangeOutput">Output is: </div>
   </form>
 
 
   </div>
+
+<a href="https://www.exchangerate-api.com">Rates By Exchange Rate API</a>
 </body>
 </html>
 
-<a href="https://www.exchangerate-api.com">Rates By Exchange Rate API</a>
