@@ -14,13 +14,13 @@ module.exports = {
   contentBase: './dist'    
   },
   plugins: [
+    new Dotenv(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'money',
+      title: 'Money Exchange',
       template: './src/index.html',
       inject: 'body'
     }),
-    new Dotenv()
   ],
   module: {
     rules: [
