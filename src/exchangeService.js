@@ -3,10 +3,6 @@
 // conversionRate = CR 
 // amount = ''
 
-// url = (`https://v6/exchangerate-api.com/v6/${API_KEY}/pair/${baseCode}/${targetCode}/${amount}`)
-
-// const response.target_code = targetCode
-// const response.conversion_rate = CR
 
 // jsonExchange.target_code =
 // jsonExchange.conversion_result = 
@@ -61,6 +57,6 @@ export default class ExchangeService {
 // request.open("GET", url ,true);
 // request.send();
 
-// function getElements(response) {
-//   $('.showExchangeOutput').text(`The exchange in ${targetCode} is ${response.conversion_result}`);
-// }
+function getElements(response) {
+  $('.showExchangeOutput').text(`The exchange in ${targetCode} is ${response.conversion_result}`);
+}

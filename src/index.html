@@ -7,10 +7,8 @@
   <div class="main">
     <h1>Convert your USD to another currency</h1>
 
-    <form id=getChange method="get"><
-      <label for="inputAmount">USD amount:
-      <input id="inputAmount" data-type="currency" type="text" placeholder="$USD">
-      </label>
+    <form id=getChange method="get">
+      USD amount: <input id="inputAmount" data-type="currency" type="text" placeholder="$USD">
       <select id='targetCodes'>
       <option value="Select">Select Currency</option>
       <option value="MXN">MXN: Peso</option>
@@ -19,12 +17,11 @@
       <option value="HKD">HKD: Dollar</option>
       <option value="CAD">CAD Dollar</option>
       </select>
-      <button id="getAmount"type="button">exchange</button>
+      <button id="getAmount"type="submit">exchange</button>
     </form>
-  <form>
-    <div id="showExchangeOutput">Output is: </div>
-  </form>
+    <div id="showExchangeOutput">Your new rate is : 
 
+    </div>
 
   </div>
 
