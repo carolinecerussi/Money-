@@ -35,7 +35,7 @@ This application requires the user to supply two inputs - amount, target currenc
 
 ## Known Bugs
 
-* having issues getting amounts to show after putting them into input spots
+* none
 
 ## License
 MIT 
