@@ -16,8 +16,10 @@ export default class ExchangeService {
   static getExchange(targetCode, amount) {
     return new Promise (function(resolve,reject) {
       let request = new XMLHttpRequest();
-      const url = `https://v6/exchangerate-api.com/v6/${process.env.API_KEY}/pair/USD/${targetCode}/${amount}`;
+      console.log(request);
+      const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/USD/${targetCode}/${amount}`;
       request.onload = function() {
+        console.log(request);
         if (this.status === 200) {
           resolve(request.response);
         }else {
@@ -57,6 +59,6 @@ export default class ExchangeService {
 // request.open("GET", url ,true);
 // request.send();
 
-function getElements(response) {
-  $('.showExchangeOutput').text(`The exchange in ${targetCode} is ${response.conversion_result}`);
-}
+// function getElements(response) {
+//   $('.showExchangeOutput').text(`The exchange in ${targetCode} is ${response.conversion_result}`);
+// }

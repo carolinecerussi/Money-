@@ -4,16 +4,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import ExchangeService from './exchangeService';
 
-function getElements(response, USD, targetCode) {
-  if (response.conversion_rates){
-    const conversion = (USD/ response.conversion_rates.USD).toFixed(4);
-    $('.showExchangeOutput').text(`With ${USD} USD, your exchange is ${conversion} ${targetCode}`);
+function getElements(response, USD,targetAmount, targetCode) {
+  const jsonResponse = JSON.parse(response);
+  console.log(typeof jsonResponse);
+  if (jsonResponse.conversion_result){
+    targetAmount = JSON.parse(jsonResponse.conversion_result);
+    console.log(targetAmount);
+    // console.log(jsonResponse.conversion_result)
+    const conversion = (USD/jsonResponse.conversion_rate.USD).toFixed(4);
+    targetCode = (jsonResponse.target_code);
+    $('#showExchangeOutput').text(`With ${USD} USD, your exchange is ${targetAmount} ${targetCode}`);
   } else {
     $('#errorOutput').text(`error! Please enter valid amount`);
   }
 
 }
 
+// {"result":"success","documentation":"https://www.exchangerate-api.com/docs","terms_of_use":"https://www.exchangerate-api.com/terms","time_last_update_unix":1657497602,"time_last_update_utc":"Mon, 11 Jul 2022 00:00:02 +0000","time_next_update_unix":1657584002,"time_next_update_utc":"Tue, 12 Jul 2022 00:00:02 +0000","base_code":"USD","target_code":"JPY","conversion_rate":136.2615,"conversion_result":3134.0145}
 
 
 async function makeAPICall (targetCode, USD) {
@@ -23,12 +30,13 @@ async function makeAPICall (targetCode, USD) {
 
 
 
-
 $(document).ready(function() {
-  $('#getAmount').submit(function(event) {
+  $('#getChange').submit(function(event) {
   event.preventDefault();
   let USD = parseFloat($('#inputAmount').val());
+  console.log(USD);
   let targetCode = $('#targetCodes option:selected').val();
+  console.log(targetCode);
   makeAPICall(targetCode, USD);
   $('.showExchangeOutput').show();
   })
